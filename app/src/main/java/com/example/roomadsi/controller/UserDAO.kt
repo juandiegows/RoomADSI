@@ -13,13 +13,12 @@ interface UserDAO
     @Insert
     fun insert(user: User) : Long
     @Query("SELECT * FROM ${User.TABLE_NAME}")
-    suspend fun get(): List<User>
+     fun get(): List<User>
     @Query("SELECT * FROM ${User.TABLE_NAME} WHERE ${User.COL_ID} = :userId")
     suspend fun get(userId: Long): User?
 
     @Update
-    fun update(user: User) : Long
-
+    fun update(user: User)
     @Delete
-    fun delete(user: User): Long
+    fun delete(user: User)
 }

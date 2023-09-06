@@ -26,12 +26,12 @@ data class User(
     @ColumnInfo(COL_ID) var id:Long,
     @ColumnInfo(name = COL_NAME) var name:String,
     @ColumnInfo(name = COL_LAST_NAME) var lastName:String,
-    @ColumnInfo(name = COL_EMAIL) var email: Email,
-    @ColumnInfo(name = COL_BIRTH_DAY) var birthday: Date,
+    @ColumnInfo(name = COL_EMAIL) var email: String,
+    @ColumnInfo(name = COL_BIRTH_DAY) var birthday: String,
     @ColumnInfo(name = COL_GENDER_ID) var genderId:Long,
 ) {
     companion object {
-        const val TABLE_NAME = "gender"
+        const val TABLE_NAME = "user"
         const val COL_ID = "id"
         const val  COL_NAME = "name"
         const val  COL_LAST_NAME = "last_name"

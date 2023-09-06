@@ -13,15 +13,15 @@ interface GenderDao {
     @Insert
     fun insert(gender: Gender) : Long
     @Query("SELECT * FROM ${Gender.TABLE_NAME}")
-    suspend fun get(): List<Gender>
+     fun get(): List<Gender>
     @Query("SELECT * FROM ${Gender.TABLE_NAME} WHERE ${Gender.COL_ID} = :genderId")
-    suspend fun get(genderId: Long): Gender?
+     fun get(genderId: Long): Gender?
 
     @Update
-    fun update(gender: Gender) : Long
+    fun update(gender: Gender)
 
     @Delete
-    fun delete(gender: Gender): Long
+    fun delete(gender: Gender)
 
 
 }
