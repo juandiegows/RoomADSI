@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         CoroutineScope(Dispatchers.IO).launch {
-          var count =  AppDatabase.GetDataBase(this@MainActivity).genderDAO().get().size
+          val list =  AppDatabase.GetDataBase(this@MainActivity).genderDAO().get()
             runOnUiThread{
-                Toast.makeText(this@MainActivity, "$count", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "${list.size}", Toast.LENGTH_SHORT).show()
             }
         }
 

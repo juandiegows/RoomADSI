@@ -8,21 +8,15 @@ import androidx.room.Update
 import com.example.roomadsi.models.Gender
 
 @Dao
-interface GenderDao {
-
+interface GenderDAO {
     @Insert
     fun insert(gender: Gender) : Long
     @Query("SELECT * FROM ${Gender.TABLE_NAME}")
-     fun get(): List<Gender>
-    @Query("SELECT * FROM ${Gender.TABLE_NAME} WHERE ${Gender.COL_ID} = :genderId")
-     fun get(genderId: Long): Gender?
-
+    fun get(): List<Gender>
     @Update
     fun update(gender: Gender)
 
     @Delete
     fun delete(gender: Gender)
 
-
 }
-

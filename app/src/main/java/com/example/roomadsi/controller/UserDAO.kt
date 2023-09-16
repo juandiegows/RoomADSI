@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+
 import com.example.roomadsi.models.User
 
 @Dao
@@ -14,8 +15,8 @@ interface UserDAO
     fun insert(user: User) : Long
     @Query("SELECT * FROM ${User.TABLE_NAME}")
      fun get(): List<User>
-    @Query("SELECT * FROM ${User.TABLE_NAME} WHERE ${User.COL_ID} = :userId")
-    suspend fun get(userId: Long): User?
+//    @Query("SELECT * FROM ${User.TABLE_NAME} WHERE ${User.COL_ID} = :userId")
+//    suspend fun get(userId: Long): User?
 
     @Update
     fun update(user: User)
