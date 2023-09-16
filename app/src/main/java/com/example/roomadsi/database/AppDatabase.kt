@@ -18,10 +18,7 @@ abstract class AppDatabase : RoomDatabase() {
 
     //se crear los controlladores
     abstract fun genderDAO(): GenderDAO
-
     abstract fun userDAO(): UserDAO
-
-    //    abstract  fun userDAO(): UserDAO
     companion object {
         const val databaseName = "DBTest"
 
@@ -37,7 +34,7 @@ abstract class AppDatabase : RoomDatabase() {
                 context.applicationContext,
                 AppDatabase::class.java,
                 databaseName
-            ).addCallback(object : RoomDatabase.Callback() {
+            ).addCallback(object : Callback() {
                 override fun onCreate(db: SupportSQLiteDatabase) {
                     super.onCreate(db)
                     var list = listOf(
