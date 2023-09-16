@@ -13,12 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        CoroutineScope(Dispatchers.IO).launch {
-          val list =  AppDatabase.GetDataBase(this@MainActivity).genderDAO().get()
-            runOnUiThread{
-                Toast.makeText(this@MainActivity, "${list.size}", Toast.LENGTH_SHORT).show()
-            }
-        }
+
 
     }
 }
